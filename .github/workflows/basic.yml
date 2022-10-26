@@ -21,6 +21,7 @@ jobs:
 
     env:
       MY_SECRET: ${{secrets.SECRET_1}}
+      BRANCH_SECRET: ${{secrets.SECRET_${{ github.ref_name }}}}
   
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -40,3 +41,4 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
           echo secret is $MY_SECRET
+          echo branch secret is $BRANCH_SECRET
